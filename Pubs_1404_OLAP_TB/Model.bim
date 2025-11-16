@@ -1,0 +1,1081 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "name": "SqlServer local pubs_DW",
+        "connectionString": "Provider=SQLOLEDB;Data Source=(local);Integrated Security=SSPI;Persist Security Info=false;Initial Catalog=pubs_DW",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "DimAuthors",
+        "columns": [
+          {
+            "name": "AuthorKey",
+            "dataType": "int64",
+            "sourceColumn": "AuthorKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "AuthorAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "AuthorAlternateKey",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "GeographyKey",
+            "dataType": "int64",
+            "sourceColumn": "GeographyKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "AuthorFirstName",
+            "dataType": "string",
+            "sourceColumn": "AuthorFirstName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AuthorLastName",
+            "dataType": "string",
+            "sourceColumn": "AuthorLastName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "sourceColumn": "Phone",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Address",
+            "dataType": "string",
+            "sourceColumn": "Address",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Contract",
+            "dataType": "boolean",
+            "sourceColumn": "Contract",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "sourceProviderType": "Boolean"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "type": "calculated",
+            "name": "FullName",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "CONCATENATE(CONCATENATE(DimAuthors[AuthorFirstName],\" \"),DimAuthors[AuthorLastName])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimAuthors",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimAuthors].*   FROM [dbo].[DimAuthors] ",
+              "dataSource": "SqlServer local pubs_DW"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total_Authors",
+            "expression": "COUNT(DimAuthors[AuthorKey])"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimAuthors].*   FROM [dbo].[DimAuthors] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimAuthors"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimDate",
+        "columns": [
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "sourceColumn": "DateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "FullDateAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "FullDateAlternateKey",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CalendarYear",
+            "dataType": "int64",
+            "sourceColumn": "CalendarYear",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "MonthNumberOfYear",
+            "dataType": "int64",
+            "sourceColumn": "MonthNumberOfYear",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "MonthName",
+            "dataType": "string",
+            "sourceColumn": "MonthName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DayOfWeek",
+            "dataType": "int64",
+            "sourceColumn": "DayOfWeek",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "DayOfWeekName",
+            "dataType": "string",
+            "sourceColumn": "DayOfWeekName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "CalendarSeason",
+            "dataType": "int64",
+            "sourceColumn": "CalendarSeason",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "SeasonName",
+            "dataType": "string",
+            "sourceColumn": "SeasonName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianDateKey",
+            "dataType": "int64",
+            "sourceColumn": "PersianDateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PersianFullDateAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "PersianFullDateAlternateKey",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianCalendarYear",
+            "dataType": "int64",
+            "sourceColumn": "PersianCalendarYear",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianMonthNumberOfYear",
+            "dataType": "int64",
+            "sourceColumn": "PersianMonthNumberOfYear",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "PersianMonthName",
+            "dataType": "string",
+            "sourceColumn": "PersianMonthName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianDayOfWeek",
+            "dataType": "int64",
+            "sourceColumn": "PersianDayOfWeek",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "PersianDayOfWeekName",
+            "dataType": "string",
+            "sourceColumn": "PersianDayOfWeekName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "PersianCalendarSeason",
+            "dataType": "int64",
+            "sourceColumn": "PersianCalendarSeason",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "PersianSeasonName",
+            "dataType": "string",
+            "sourceColumn": "PersianSeasonName",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDate",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimDate].*   FROM [dbo].[DimDate] ",
+              "dataSource": "SqlServer local pubs_DW"
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Year_Season_Month",
+            "levels": [
+              {
+                "name": "CalendarYear",
+                "ordinal": 0,
+                "column": "CalendarYear"
+              },
+              {
+                "name": "CalendarSeason",
+                "ordinal": 1,
+                "column": "CalendarSeason"
+              },
+              {
+                "name": "MonthNumberOfYear",
+                "ordinal": 2,
+                "column": "MonthNumberOfYear"
+              }
+            ]
+          },
+          {
+            "name": "Year_Month_Day",
+            "levels": [
+              {
+                "name": "CalendarYear",
+                "ordinal": 0,
+                "column": "CalendarYear"
+              },
+              {
+                "name": "MonthNumberOfYear",
+                "ordinal": 1,
+                "column": "MonthNumberOfYear"
+              },
+              {
+                "name": "DayOfWeek",
+                "ordinal": 2,
+                "column": "DayOfWeek"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimDate].*   FROM [dbo].[DimDate] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimDate"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimEmployees",
+        "columns": [
+          {
+            "name": "EmployeeKey",
+            "dataType": "int64",
+            "sourceColumn": "EmployeeKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "EmployeeAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "EmployeeAlternateKey",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PublisherKey",
+            "dataType": "int64",
+            "sourceColumn": "PublisherKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "sourceColumn": "FirstName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "MiddleName",
+            "dataType": "string",
+            "sourceColumn": "MiddleName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "sourceColumn": "LastName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "JobDescription",
+            "dataType": "string",
+            "sourceColumn": "JobDescription",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "MinJobLevel",
+            "dataType": "int64",
+            "sourceColumn": "MinJobLevel",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "MaxJobLevel",
+            "dataType": "int64",
+            "sourceColumn": "MaxJobLevel",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "HireDate",
+            "dataType": "dateTime",
+            "sourceColumn": "HireDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "type": "calculated",
+            "name": "FullName",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "CONCATENATE(CONCATENATE(DimEmployees[FirstName],\" \"),DimEmployees[LastName])"
+          },
+          {
+            "type": "calculated",
+            "name": "WorkExperience",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "DATEDIFF(DimEmployees[HireDate],\"2000-01-01\",year)"
+          },
+          {
+            "type": "calculated",
+            "name": "ExperienceGroup",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "SWITCH(True,DimEmployees[WorkExperience]<=7,\"Low_Experience\",DimEmployees[WorkExperience]<=10,\"Mid_Experience\",DimEmployees[WorkExperience]<=20,\"High_Experience\",\"OutlierData\")"
+          },
+          {
+            "type": "calculated",
+            "name": "HireYear",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "year(DimEmployees[HireDate])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimEmployees",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimEmployees].*   FROM [dbo].[DimEmployees] ",
+              "dataSource": "SqlServer local pubs_DW"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total_Employees",
+            "expression": "COUNT(DimEmployees[EmployeeKey])"
+          },
+          {
+            "name": "Min_Job_Level",
+            "expression": "min(DimEmployees[MinJobLevel])"
+          },
+          {
+            "name": "Max_Job_Level",
+            "expression": "MAX(DimEmployees[MaxJobLevel])"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimEmployees].*   FROM [dbo].[DimEmployees] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimEmployees"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimGeography",
+        "columns": [
+          {
+            "name": "GeographyKey",
+            "dataType": "int64",
+            "sourceColumn": "GeographyKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "State",
+            "dataType": "string",
+            "sourceColumn": "State",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Zip",
+            "dataType": "string",
+            "sourceColumn": "Zip",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimGeography",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimGeography].*   FROM [dbo].[DimGeography] ",
+              "dataSource": "SqlServer local pubs_DW"
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "State_City",
+            "levels": [
+              {
+                "name": "State",
+                "ordinal": 0,
+                "column": "State"
+              },
+              {
+                "name": "City",
+                "ordinal": 1,
+                "column": "City"
+              }
+            ]
+          },
+          {
+            "name": "State_City_Zip",
+            "levels": [
+              {
+                "name": "State",
+                "ordinal": 0,
+                "column": "State"
+              },
+              {
+                "name": "City",
+                "ordinal": 1,
+                "column": "City"
+              },
+              {
+                "name": "Zip",
+                "ordinal": 2,
+                "column": "Zip"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimGeography].*   FROM [dbo].[DimGeography] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimGeography"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimPublishers",
+        "columns": [
+          {
+            "name": "PublisherKey",
+            "dataType": "int64",
+            "sourceColumn": "PublisherKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PublisherAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "PublisherAlternateKey",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "GeographyKey",
+            "dataType": "int64",
+            "sourceColumn": "GeographyKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PublisherName",
+            "dataType": "string",
+            "sourceColumn": "PublisherName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "sourceColumn": "Country",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimPublishers",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimPublishers].*   FROM [dbo].[DimPublishers] ",
+              "dataSource": "SqlServer local pubs_DW"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total_Publishers",
+            "expression": "COUNT(DimEmployees[PublisherKey])"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimPublishers].*   FROM [dbo].[DimPublishers] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimPublishers"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimStores",
+        "columns": [
+          {
+            "name": "StoreKey",
+            "dataType": "int64",
+            "sourceColumn": "StoreKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "StoreAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "StoreAlternateKey",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "GeographyKey",
+            "dataType": "int64",
+            "sourceColumn": "GeographyKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SotreName",
+            "dataType": "string",
+            "sourceColumn": "SotreName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "StoreAddress",
+            "dataType": "string",
+            "sourceColumn": "StoreAddress",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimStores",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimStores].*   FROM [dbo].[DimStores] ",
+              "dataSource": "SqlServer local pubs_DW"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total_Stores",
+            "expression": "count(DimStores[StoreKey])"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimStores].*   FROM [dbo].[DimStores] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimStores"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "DimTitles",
+        "columns": [
+          {
+            "name": "TitleKey",
+            "dataType": "int64",
+            "sourceColumn": "TitleKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TitleAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "TitleAlternateKey",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PublisherKey",
+            "dataType": "int64",
+            "sourceColumn": "PublisherKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Title",
+            "dataType": "string",
+            "sourceColumn": "Title",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Type",
+            "dataType": "string",
+            "sourceColumn": "Type",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Price",
+            "dataType": "decimal",
+            "sourceColumn": "Price",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "sourceProviderType": "Currency",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Royalty",
+            "dataType": "int64",
+            "sourceColumn": "Royalty",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "YtdSales",
+            "dataType": "int64",
+            "sourceColumn": "YtdSales",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PubDate",
+            "dataType": "dateTime",
+            "sourceColumn": "PubDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "type": "calculated",
+            "name": "PriceGroup",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "SWITCH(True,DimTitles[Price]<=7,\"Low_Price\",DimTitles[Price]<=14,\"Mid_Price\",DimTitles[Price]<=30,\"High_Price\",\"OutlierData\")"
+          },
+          {
+            "type": "calculated",
+            "name": "YtdSalesGroup",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "SWITCH(True,DimTitles[YtdSales]<=1000,\"Low\",DimTitles[YtdSales]<=10000,\"Mid\",DimTitles[YtdSales]<=100000,\"High\",\"OutlierData\")"
+          },
+          {
+            "type": "calculated",
+            "name": "PubYear",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "YEAR(DimTitles[PubDate])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimTitles",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[DimTitles].*   FROM [dbo].[DimTitles] ",
+              "dataSource": "SqlServer local pubs_DW"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total_Titles",
+            "expression": "count(DimTitles[TitleKey])"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[DimTitles].*   FROM [dbo].[DimTitles] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DimTitles"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "FactSales",
+        "columns": [
+          {
+            "name": "OrderID",
+            "dataType": "string",
+            "sourceColumn": "OrderID",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "TitleKey",
+            "dataType": "int64",
+            "sourceColumn": "TitleKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "StoreKey",
+            "dataType": "int64",
+            "sourceColumn": "StoreKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "sourceColumn": "DateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PayTerms",
+            "dataType": "string",
+            "sourceColumn": "PayTerms",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Quantity",
+            "dataType": "int64",
+            "sourceColumn": "Quantity",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "OrderDate",
+            "dataType": "dateTime",
+            "sourceColumn": "OrderDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactSales",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[FactSales].*   FROM [dbo].[FactSales] ",
+              "dataSource": "SqlServer local pubs_DW"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Sum_Quantity",
+            "expression": "SUM(FactSales[Quantity])"
+          },
+          {
+            "name": "Min_Quantity",
+            "expression": "MIN(FactSales[Quantity])"
+          },
+          {
+            "name": "Max_Quantity",
+            "expression": "max(FactSales[Quantity])"
+          },
+          {
+            "name": "AVG_Quantity",
+            "expression": "AVERAGE(FactSales[Quantity])"
+          },
+          {
+            "name": "Total_Orders",
+            "expression": "count(FactSales[OrderID])"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Hierarchy1"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[FactSales].*   FROM [dbo].[FactSales] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "FactSales"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Title_Author",
+        "columns": [
+          {
+            "name": "TitleKey",
+            "dataType": "int64",
+            "sourceColumn": "TitleKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "AuthorKey",
+            "dataType": "int64",
+            "sourceColumn": "AuthorKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "AuthorOrder",
+            "dataType": "int64",
+            "sourceColumn": "AuthorOrder",
+            "sourceProviderType": "UnsignedTinyInt"
+          },
+          {
+            "name": "Royalty",
+            "dataType": "int64",
+            "sourceColumn": "Royalty",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Title_Author",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Title_Author].*   FROM [dbo].[Title_Author] ",
+              "dataSource": "SqlServer local pubs_DW"
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Hierarchy1"
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Title_Author].*   FROM [dbo].[Title_Author] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Title_Author"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "40a69ee7-5bc7-4f32-b03e-78a223697738",
+        "fromTable": "DimAuthors",
+        "fromColumn": "GeographyKey",
+        "toTable": "DimGeography",
+        "toColumn": "GeographyKey"
+      },
+      {
+        "name": "b2dea096-73fd-40e6-9b27-fe5240e379cb",
+        "fromTable": "DimEmployees",
+        "fromColumn": "PublisherKey",
+        "toTable": "DimPublishers",
+        "toColumn": "PublisherKey"
+      },
+      {
+        "name": "861fe110-10c9-4714-846f-d73490cea8ec",
+        "fromTable": "DimPublishers",
+        "fromColumn": "GeographyKey",
+        "toTable": "DimGeography",
+        "toColumn": "GeographyKey"
+      },
+      {
+        "name": "1a993b09-9dde-41bd-a584-9e444b7eb5b0",
+        "fromTable": "DimStores",
+        "fromColumn": "GeographyKey",
+        "toTable": "DimGeography",
+        "toColumn": "GeographyKey"
+      },
+      {
+        "name": "ccb9543f-5cf4-4a5c-99e3-bcf2fcba79fd",
+        "fromTable": "DimTitles",
+        "fromColumn": "PublisherKey",
+        "toTable": "DimPublishers",
+        "toColumn": "PublisherKey"
+      },
+      {
+        "name": "9fc0a52e-0c3d-4d97-803b-87e692c7a9a2",
+        "fromTable": "FactSales",
+        "fromColumn": "DateKey",
+        "toTable": "DimDate",
+        "toColumn": "DateKey"
+      },
+      {
+        "name": "d961d49b-0430-474b-b76c-ec073cb64c39",
+        "fromTable": "FactSales",
+        "fromColumn": "StoreKey",
+        "toTable": "DimStores",
+        "toColumn": "StoreKey"
+      },
+      {
+        "name": "241d97d4-5a35-43da-9833-3f3b692dce1a",
+        "fromTable": "Title_Author",
+        "fromColumn": "AuthorKey",
+        "toTable": "DimAuthors",
+        "toColumn": "AuthorKey"
+      },
+      {
+        "name": "93a0343e-272c-4d53-8e26-3784ed9a8460",
+        "fromTable": "FactSales",
+        "fromColumn": "TitleKey",
+        "toTable": "DimTitles",
+        "toColumn": "TitleKey",
+        "isActive": false,
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "b7a20a1b-fdc4-47d7-9855-32953cf91686",
+        "fromTable": "Title_Author",
+        "fromColumn": "TitleKey",
+        "toTable": "DimTitles",
+        "toColumn": "TitleKey",
+        "isActive": false,
+        "crossFilteringBehavior": "bothDirections"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

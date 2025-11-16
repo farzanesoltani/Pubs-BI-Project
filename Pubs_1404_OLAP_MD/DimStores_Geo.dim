@@ -1,0 +1,372 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="0090474c-261f-4449-90b7-8b2f72218264" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DimStores_Geo</ID>
+  <Name>DimStores_Geo</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="4" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2434" scrolltop="-1353" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8599" y="10901" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="0100000090019e330100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimGeography" left="140" top="5588" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="2156" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00006c080000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimGeography" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimStores" left="20" top="0" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3241" height="3188" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000a90c0000740c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimStores" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="1241" top="2888" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_DimStores_DimGeography]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="2" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="1640" y="5588" />
+              <point x="1640" y="3188" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-2434</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-1353</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="204">
+            <Shape Id="Store Key" Expanded="false">
+              <Attributes>
+                <Attribute Id="Store Key" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Geography Key" Expanded="false">
+              <Attributes>
+                <Attribute Id="Geography Key" />
+              </Attributes>
+              <Position x="280" y="20" />
+            </Shape>
+            <Shape Id="City" Expanded="false">
+              <Attributes>
+                <Attribute Id="City" />
+              </Attributes>
+              <Position x="540" y="20" />
+            </Shape>
+            <Shape Id="State" Expanded="false">
+              <Attributes>
+                <Attribute Id="State" />
+              </Attributes>
+              <Position x="800" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="d0cdad52-015d-44da-93e0-e350f76e1b17">
+    <DataSourceViewID>Pubs_DW</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="5b2f0c42-9d22-4527-b42d-25ca77591f87">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Translations>
+    <Translation dwd:design-time-name="3e54afc4-7c1a-4624-9f47-c46d09f3b45a">
+      <Caption>فروشگاه_موقعیت مکانی</Caption>
+      <Language>1065</Language>
+    </Translation>
+  </Translations>
+  <Attributes>
+    <Attribute dwd:design-time-name="f17aadaf-4cd0-40cf-9f18-56e08625b548">
+      <ID>Store Key</ID>
+      <Name>Store Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="744721c0-853f-4868-aae7-08d1d8ffc08e">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="86d05ee2-c234-4af9-bd75-b85c297ad1f9">
+            <TableID>dbo_DimStores</TableID>
+            <ColumnID>StoreKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="c669fbf0-c720-42ce-8a36-f3bbb3682f28">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="70670d46-d747-4e56-b6e4-4a6cc83b048c">
+          <TableID>dbo_DimStores</TableID>
+          <ColumnID>SotreName</ColumnID>
+        </Source>
+      </NameColumn>
+      <Translations>
+        <Translation dwd:design-time-name="07d13044-f3d5-4711-96c7-bde5e486573a">
+          <Caption>نام فروشگاه</Caption>
+          <Language>1065</Language>
+        </Translation>
+      </Translations>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="51718c17-8758-450e-9497-c543680d3b0d">
+          <AttributeID>Geography Key</AttributeID>
+          <Name>Geography Key</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="31165f0e-895f-4738-a1ea-d198ad1fda08">
+      <ID>Geography Key</ID>
+      <Name>Geography Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c8194e48-afe3-43a0-b4fb-33784565a320">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="800f10d5-c098-49d8-942c-4b2428c574f7">
+            <TableID>dbo_DimGeography</TableID>
+            <ColumnID>GeographyKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="e5e203e7-8cb1-46eb-a6e0-487ab94f1044">
+        <DataType>WChar</DataType>
+        <DataSize>10</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="c8793f0f-100f-4aa6-a075-48939ac07427">
+          <TableID>dbo_DimGeography</TableID>
+          <ColumnID>Zip</ColumnID>
+        </Source>
+      </NameColumn>
+      <Translations>
+        <Translation dwd:design-time-name="755fe498-9e4d-4d47-8777-747c9b11dd41">
+          <Caption>کدپستی</Caption>
+          <Language>1065</Language>
+        </Translation>
+      </Translations>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="e98002fa-da90-41cf-8c7c-200f17b6293e">
+          <AttributeID>City</AttributeID>
+          <Name>City</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0083b1f5-b7df-4f52-8c30-58edf530cf79">
+      <ID>State</ID>
+      <Name>State</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="74bb4f93-3366-47a6-8951-baf9988ff1ea">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="57dc6c63-8fc3-45d3-918d-2b72db7bfc2e">
+            <TableID>dbo_DimGeography</TableID>
+            <ColumnID>State</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="8052d5aa-77ca-4d0f-abe3-ce2e2d9c3e17">
+          <Caption>ایالت</Caption>
+          <Language>1065</Language>
+        </Translation>
+      </Translations>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="86f65338-904c-4300-a75f-e525053bee40">
+      <ID>City</ID>
+      <Name>City</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="573a3945-087f-421c-97eb-bd6b8d1c599f">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1ddd58d3-4fe6-4018-930c-b785b0dfa2a2">
+            <TableID>dbo_DimGeography</TableID>
+            <ColumnID>State</ColumnID>
+          </Source>
+        </KeyColumn>
+        <KeyColumn dwd:design-time-name="52d2ac0b-751c-466e-a164-5506f7fadf92">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="27a2c3c5-5b24-4ac2-9e43-29f53e53e883">
+            <TableID>dbo_DimGeography</TableID>
+            <ColumnID>City</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="2cca899d-c88e-4d72-aff6-724d395b6939">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="bd194d2b-0552-4172-9d63-b2181c707432">
+          <TableID>dbo_DimGeography</TableID>
+          <ColumnID>City</ColumnID>
+        </Source>
+      </NameColumn>
+      <Translations>
+        <Translation dwd:design-time-name="51b008da-ba20-446b-8be4-8bc785bca89f">
+          <Caption>شهر</Caption>
+          <Language>1065</Language>
+        </Translation>
+      </Translations>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="b833246b-2929-40d1-af37-322c81f1ae42">
+          <AttributeID>State</AttributeID>
+          <Name>State</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="8c05775a-594b-483e-9a64-601b004cc642">
+      <ID>Hierarchy</ID>
+      <Name>State_Store</Name>
+      <Translations>
+        <Translation dwd:design-time-name="dcd0e491-2c1f-4a26-a57e-1f160e98bd85">
+          <Caption>ایالت_فروشگاه</Caption>
+          <Language>1065</Language>
+        </Translation>
+      </Translations>
+      <Levels>
+        <Level dwd:design-time-name="9dfc3318-4375-416c-8f72-42710e082e6c">
+          <ID>State</ID>
+          <Name>State</Name>
+          <SourceAttributeID>State</SourceAttributeID>
+          <Translations>
+            <Translation dwd:design-time-name="b21abae6-872b-46e5-9c93-7b9f51ba9840">
+              <Caption>ایالت</Caption>
+              <Language>1065</Language>
+            </Translation>
+          </Translations>
+        </Level>
+        <Level dwd:design-time-name="4620fdfc-7d6e-403b-bf12-aedd769f2b84">
+          <ID>Store Key</ID>
+          <Name>Store Key</Name>
+          <SourceAttributeID>Store Key</SourceAttributeID>
+          <Translations>
+            <Translation dwd:design-time-name="b0070784-1e88-486e-b1d7-25b9a899f3cd">
+              <Caption>نام فروشگاه</Caption>
+              <Language>1065</Language>
+            </Translation>
+          </Translations>
+        </Level>
+      </Levels>
+    </Hierarchy>
+    <Hierarchy dwd:design-time-name="7a3f8360-5c89-4053-a74f-b30947619516">
+      <ID>Hierarchy 1</ID>
+      <Name>State_City_Store</Name>
+      <Translations>
+        <Translation dwd:design-time-name="77bc318e-bdea-4f0a-bf61-a51304e856cf">
+          <Caption>ایالت_شهر_فروشگاه</Caption>
+          <Language>1065</Language>
+        </Translation>
+      </Translations>
+      <Levels>
+        <Level dwd:design-time-name="d1b93592-dde8-494e-9b34-b59013ffaf60">
+          <ID>State</ID>
+          <Name>State</Name>
+          <SourceAttributeID>State</SourceAttributeID>
+          <Translations>
+            <Translation dwd:design-time-name="cb9b2a2f-22c0-4e72-93a5-db799717caf0">
+              <Caption>ایالت</Caption>
+              <Language>1065</Language>
+            </Translation>
+          </Translations>
+        </Level>
+        <Level dwd:design-time-name="563b8694-e704-460a-acfb-5a10412744aa">
+          <ID>City</ID>
+          <Name>City</Name>
+          <SourceAttributeID>City</SourceAttributeID>
+          <Translations>
+            <Translation dwd:design-time-name="c632103f-53dc-41d0-b9aa-e240a93758c7">
+              <Caption>شهر</Caption>
+              <Language>1065</Language>
+            </Translation>
+          </Translations>
+        </Level>
+        <Level dwd:design-time-name="e3f230d5-88c0-429d-a26d-f2f1e72421a9">
+          <ID>Store Key</ID>
+          <Name>Store Key</Name>
+          <SourceAttributeID>Store Key</SourceAttributeID>
+          <Translations>
+            <Translation dwd:design-time-name="2feefcd2-6080-4bf1-aaee-232966ce7381">
+              <Caption>نام فروشگاه</Caption>
+              <Language>1065</Language>
+            </Translation>
+          </Translations>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

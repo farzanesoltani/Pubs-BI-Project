@@ -1,0 +1,110 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/4/2025 3:09:13 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SOLTANI"
+  DTS:CreatorName="Soltani\Farzane"
+  DTS:DTSID="{B21D8968-6798-47B3-8104-9FB6A84C6242}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5467.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{1398EFBD-7ED7-41A6-826B-040F24637574}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).pubs1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{E1D4CE36-3FBA-4D61-B31A-0B9DB7736759}"
+      DTS:ObjectName="(local).pubs1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=pubs;Integrated Security=True;Application Name=SSIS-Package1-{E1D4CE36-3FBA-4D61-B31A-0B9DB7736759}(local).pubs1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).pubs_ETL_Setting]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{D21366E9-2D12-4919-B56A-557AEFE3666A}"
+      DTS:ObjectName="(local).pubs_ETL_Setting">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=pubs_ETL_Setting;Integrated Security=True;Application Name=SSIS-Package1-{D21366E9-2D12-4919-B56A-557AEFE3666A}(local).pubs_ETL_Setting;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).pubs_OP]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{F467FEDA-9398-428D-80C5-8E01FFE61213}"
+      DTS:ObjectName="(local).pubs_OP">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=pubs_OP;Integrated Security=True;Application Name=SSIS-Package1-{F467FEDA-9398-428D-80C5-8E01FFE61213}(local).pubs_OP;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{70729CA2-00AF-42D5-B0BD-AF0E70240EED}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CDC_State">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CDC Initial_Load"
+      DTS:CreationName="Attunity.CdcControlTask"
+      DTS:Description="CDC Control Task"
+      DTS:DTSID="{D39FE614-581B-4B2C-90A1-51F6B671E4EA}"
+      DTS:ExecutableType="Attunity.CdcControlTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CDC Initial_Load"
+      DTS:TaskContact="Attunity Ltd.; All Rights Reserved; http://www.attunity.com;"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <CDCControlTask
+          Connection="(local).pubs1"
+          TaskOperation="MarkCdcStart"
+          OperationParameter=""
+          StateConnection="(local).pubs_ETL_Setting"
+          StateVariable="User::CDC_State"
+          AutomaticStatePersistence="True"
+          StateName="CDC_State"
+          StateTable="[dbo].[cdc_states]"
+          CommandTimeout="30"
+          ChangeDetectionRetryInterval="10"
+          ChangeDetectionTimeout="60" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\CDC Initial_Load"
+          TopLeft="312.5,140.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

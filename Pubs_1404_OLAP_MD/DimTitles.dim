@@ -1,0 +1,385 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="16262dd8-a7c1-481a-8669-68cd31b63297" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DimTitles</ID>
+  <Name>DimTitles</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2513" scrolltop="-2725" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="8229" y="14817" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="0100000090019e330100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimTitles" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3082" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00000a0c000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimTitles" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-2513</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-2725</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="591e8d49-a68b-422f-84ae-6628d6bc8a06">
+    <DataSourceViewID>Pubs_DW</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="daa3e92a-4178-4bcf-b4c1-ccf4fe66bd6f">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Translations>
+    <Translation dwd:design-time-name="b93848d0-6b49-4160-aefb-a50db3a896e0">
+      <Language>1065</Language>
+      <Caption>کتاب ها</Caption>
+    </Translation>
+  </Translations>
+  <Attributes>
+    <Attribute dwd:design-time-name="adef175e-c48f-4bac-bbb0-0914ccd83efc">
+      <ID>Title Key</ID>
+      <Name>Title Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a9e30796-75b1-4334-8d3f-8014fc9b11fe">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fb7dd50b-2286-433c-a5ca-9b26c3109475">
+            <TableID>dbo_DimTitles</TableID>
+            <ColumnID>TitleKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="c0350c56-c354-4e51-bb79-e039d8ebf067">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="42fda62a-07f3-4f63-8f01-bbd264f070b1">
+          <TableID>dbo_DimTitles</TableID>
+          <ColumnID>Title</ColumnID>
+        </Source>
+      </NameColumn>
+      <Translations>
+        <Translation dwd:design-time-name="205252c6-072b-4ea4-9706-30f0ba70b7fc">
+          <Language>1065</Language>
+          <Caption>عنوان کتاب</Caption>
+        </Translation>
+      </Translations>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="de2bce9e-82de-44b8-be9e-5f9fda57928e">
+          <AttributeID>Type</AttributeID>
+          <Name>Type</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e9531301-1546-44c5-8ec0-fcff7c94559b">
+          <AttributeID>Price</AttributeID>
+          <Name>Price</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1d9a608c-148c-4d8a-b65c-ef42c3fdd116">
+          <AttributeID>Royalty</AttributeID>
+          <Name>Royalty</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="98be29e2-3492-4d11-a01f-3ff85e6e85c7">
+          <AttributeID>Ytd Sales</AttributeID>
+          <Name>Ytd Sales</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ae3c9463-e088-4422-8fa3-a4b6c6335df4">
+          <AttributeID>Pub Date</AttributeID>
+          <Name>Pub Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="9c8497c0-f755-4427-90fb-b17171c7fcb5">
+          <AttributeID>Price Group</AttributeID>
+          <Name>Price Group</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="5bfb296e-55ae-4dbd-9efe-6699c669b23f">
+          <AttributeID>Sales Group</AttributeID>
+          <Name>Sales Group</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f170c94f-20ea-4850-979c-707aaa8a2173">
+          <AttributeID>Pub Year</AttributeID>
+          <Name>Pub Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a0bae39b-fda6-4603-9521-2410785a56b4">
+          <AttributeID>Publisher Key</AttributeID>
+          <Name>Publisher Key</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="77bce633-a3c3-4d17-8d77-a74dff66638b">
+      <ID>Type</ID>
+      <Name>Type</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="849d3a80-b981-48ab-b11b-f0f98d3ede77">
+          <DataType>WChar</DataType>
+          <DataSize>20</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e1140a85-6345-452f-9ec5-0b1dd7343552">
+            <TableID>dbo_DimTitles</TableID>
+            <ColumnID>Type</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="31f683a9-92f9-44da-b128-2287d2c54c16">
+          <Language>1065</Language>
+          <Caption>نوع کتاب</Caption>
+        </Translation>
+      </Translations>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="763757d8-9eb0-4f21-8cdf-07270481f3df">
+      <ID>Price</ID>
+      <Name>Price</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d4dfcd92-45e4-4004-903d-30ca005e2189">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bef967cf-4c5b-44c9-b546-1a4ed8922988">
+            <TableID>dbo_DimTitles</TableID>
+            <ColumnID>Price</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="3f292487-a03c-4375-a56b-fa4904c75c50">
+          <Language>1065</Language>
+          <Caption>قیمت</Caption>
+        </Translation>
+      </Translations>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ea4d200c-cdc3-472e-93ef-fe0db2080495">
+      <ID>Royalty</ID>
+      <Name>Royalty</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="96cbf832-670d-491b-9488-0c36ffb55436">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="85162e53-e700-4db3-88ad-7a558c2d4da4">
+            <TableID>dbo_DimTitles</TableID>
+            <ColumnID>Royalty</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="f0f24d4c-037f-492c-918e-bf7e19a593e3">
+          <Language>1065</Language>
+          <Caption>حق تالیف</Caption>
+        </Translation>
+      </Translations>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+      <ddl300_300:FormatString>0</ddl300_300:FormatString>
+    </Attribute>
+    <Attribute dwd:design-time-name="6ea9c225-cc95-4fea-9350-7bacec9e9e1b">
+      <ID>Ytd Sales</ID>
+      <Name>Ytd Sales</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9282f3f9-12a5-44d6-b0a6-32d119b7dafc">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="51b3d066-7cca-4544-9ff1-9370a60a1a26">
+            <TableID>dbo_DimTitles</TableID>
+            <ColumnID>YtdSales</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="caffbdaf-e016-4559-9905-64e479c4cacb">
+          <Language>1065</Language>
+          <Caption>فروش سالیانه</Caption>
+        </Translation>
+      </Translations>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4a1400a3-ada2-4071-a226-c52926ce5f23">
+      <ID>Pub Date</ID>
+      <Name>Pub Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="232d3534-c2d4-4c0e-85b6-afdcc78d0b8f">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2b04d9f4-f6f4-4306-9db8-c61fe2047ee0">
+            <TableID>dbo_DimTitles</TableID>
+            <ColumnID>PubDate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="cc54ff27-8244-44cf-a27d-f75f43d2063e">
+          <Language>1065</Language>
+          <Caption>تاریخ انتشار</Caption>
+        </Translation>
+      </Translations>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="5a3dc392-01be-4f35-828e-dec591518e22">
+      <ID>Price Group</ID>
+      <Name>Price Group</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a624ddfc-10e4-412d-b953-8cb39ba2b17c">
+          <DataType>WChar</DataType>
+          <DataSize>11</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="04d06b52-d8c8-48a8-836d-4539757916d3">
+            <TableID>dbo_DimTitles</TableID>
+            <ColumnID>PriceGroup</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="4bc61202-1ad9-45b2-a446-f9c117dbc3aa">
+          <Language>1065</Language>
+          <Caption>گروه بندی قیمتی</Caption>
+        </Translation>
+      </Translations>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="19fa6512-b7ba-4dc7-99be-3bb2836a5d4d">
+      <ID>Sales Group</ID>
+      <Name>Sales Group</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="41f32a18-99d3-4051-a336-332673572fc8">
+          <DataType>WChar</DataType>
+          <DataSize>11</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9726ea33-a5ac-4d44-8f8a-2e061aef3c29">
+            <TableID>dbo_DimTitles</TableID>
+            <ColumnID>SalesGroup</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="902b4bf6-0800-445c-a149-87dc83ca254e">
+          <Language>1065</Language>
+          <Caption>گروه بندی فروش سالیانه</Caption>
+        </Translation>
+      </Translations>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="05b78935-9ea4-457b-b84f-0933f26ccedd">
+      <ID>Pub Year</ID>
+      <Name>Pub Year</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3d7eb677-b004-4c75-86c1-ae93924d5228">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3d555f09-6a25-4c70-9de2-33f62062b192">
+            <TableID>dbo_DimTitles</TableID>
+            <ColumnID>PubYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <Translations>
+        <Translation dwd:design-time-name="f996fee6-72c3-4ca2-96e7-f5116f9e220e">
+          <Language>1065</Language>
+          <Caption>سال انتشار</Caption>
+        </Translation>
+      </Translations>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ec7c7f17-0963-4399-a144-3a397cd4359d">
+      <ID>Publisher Key</ID>
+      <Name>Publisher Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="80833259-1636-45bc-bdf1-35b91de1ec49">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4cebac75-2740-4395-9dfe-194f50f82365">
+            <TableID>dbo_DimTitles</TableID>
+            <ColumnID>PublisherKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="86761aae-0ef5-43fc-9704-51cff5f52ad9">
+        <DataType>WChar</DataType>
+        <DataSize>50</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b7fec558-75bf-4ce9-8380-661c9f9372ef">
+          <TableID>dbo_DimPublishers</TableID>
+          <ColumnID>PublisherName</ColumnID>
+        </Source>
+      </NameColumn>
+      <Translations>
+        <Translation dwd:design-time-name="23ed46bf-019e-47f8-91af-aed0de4de6cc">
+          <Language>1065</Language>
+          <Caption>انتشارات</Caption>
+        </Translation>
+      </Translations>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="a3dc0f70-3d62-4180-b3d1-6658a2d23fd6">
+      <ID>Hierarchy</ID>
+      <Name>Type_Title</Name>
+      <Levels>
+        <Level dwd:design-time-name="e42a1aa7-1d97-4de6-a64b-e9409892130d">
+          <ID>Type</ID>
+          <Name>Type</Name>
+          <SourceAttributeID>Type</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="a9040866-a7f8-40c3-994f-35c8fbf4e938">
+          <ID>Title Key</ID>
+          <Name>Title Key</Name>
+          <SourceAttributeID>Title Key</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
